@@ -22,6 +22,7 @@ export default function App() {
     //   .catch((err) => console.log(err));
     // fetch(api) //   .then((pok) => pok.json()) //   .then((pokemon) => console.log(pokemon));
     var type = "";
+    var color = "";
 
     const types = (tp) => {
       pokemonList.map((pokemon) => {
@@ -31,7 +32,7 @@ export default function App() {
 
         switch (tp) {
           case "fire":
-            var color = "red";
+            color = "red";
             console.log(color);
             break;
           // case "grass":
