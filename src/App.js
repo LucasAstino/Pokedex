@@ -31,7 +31,8 @@ export default function App() {
 
         switch (tp) {
           case "fire":
-            console.log("red");
+            var color = "red";
+            console.log(color);
             break;
           // case "grass":
           //   tp = green;
@@ -59,7 +60,7 @@ export default function App() {
           //   break;
         }
       });
-    }; 
+    };
     types(type);
   };
 
