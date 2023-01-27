@@ -29,12 +29,11 @@ export default function App() {
   return (
     <div className="App">
       {pokemonList.map((pokemon, key) => (
-        <div class="pokeCard">
-          <PokeCard
-            name={pokemon.data.name}
-            image={pokemon.data.sprites.front_default}
-          />
-        </div>
+        <PokeCard
+          name={pokemon.data.name}
+          image={pokemon.data.sprites.front_default}
+          type={pokemon.data.types[0].type.name}
+        />
       ))}
     </div>
   );
