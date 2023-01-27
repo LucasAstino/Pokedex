@@ -5,6 +5,7 @@ import PokeCard from "./pokeCard.js";
 
 export default function App() {
   const [pokemonList, setpokemonList] = useState([]);
+  var tp = "";
 
   useEffect(() => pokemons(), []);
 
@@ -19,22 +20,61 @@ export default function App() {
       .all(endpoints.map((endpoint) => axios.get(endpoint)))
       .then((res) => setpokemonList(res));
 
-    // axios
-    //   .get("https://pokeapi.co/api/v2/pokemon?limit=50")
-    //   .then((res) => setpokemonList(res.data.results))
-    //   .catch((err) => console.log(err));
-    // fetch(api) //   .then((pok) => pok.json()) //   .then((pokemon) => console.log(pokemon));
+    var tipo = "";
+
+    // const types = (tp) => {
+    //   pokemonList.map((pokemon, key) => {
+    //     tp = pokemon.data.types[0].type.name;
+
+    //     console.log(tp);
+
+    //     switch (tp) {
+    //       case "fire":
+    //         color = "red";
+    //         console.log(color);
+    //         break;
+    //       // case "grass":
+    //       //   tp = green;
+    //       //   break;
+    //       // case "water":
+    //       //   tp = blue;
+    //       //   break;
+    //       // case "bug":
+    //       //   tp = inceto;
+    //       //   break;
+    //       // case "normal":
+    //       //   tp = black;
+    //       //   break;
+    //       // case "poison":
+    //       //   tp = purple;
+    //       //   break;
+    //       // case "electric":
+    //       //   tp = roxo;
+    //       //   break;
+    //       // case "fairy":
+    //       //   tp = gay;
+    //       //   break;
+    //       // case "ground":
+    //       //   tp = lutador;
+    //       //   break;
+    // }
+    // });
+    // return color;
+    // };
+    // types(tipo);
   };
 
   return (
     <div className="App">
-      {pokemonList.map((pokemon, key) => (
+      {pokemonList.map((pokemon, key) => {
+        tp = pokemon.data.types[0].type.name;
+        console.log(tp);
         <PokeCard
           name={pokemon.data.name}
           image={pokemon.data.sprites.front_default}
           type={pokemon.data.types[0].type.name}
-        />
-      ))}
+        />;
+      })}
     </div>
   );
 }
