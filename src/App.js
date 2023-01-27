@@ -1,6 +1,8 @@
 import axios, { Axios } from "axios";
 import React, { useEffect, useState } from "react";
 import "./styles.css";
+import PokeCard from "./pokeCard.js";
+
 export default function App() {
   const [pokemonList, setpokemonList] = useState([]);
 
@@ -28,8 +30,10 @@ export default function App() {
     <div className="App">
       {pokemonList.map((pokemon, key) => (
         <div class="pokeCard">
-          <img src={pokemon.data.sprites.front_default} />
-          <span>{pokemon.data.name}</span>
+          <PokeCard
+            name={pokemon.data.name}
+            image={pokemon.data.sprites.front_default}
+          />
         </div>
       ))}
     </div>
