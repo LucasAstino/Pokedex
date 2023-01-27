@@ -73,6 +73,7 @@ export default function App() {
         <div class="pokeCard">
           <img src={pokemon.data.sprites.front_default} />
           <Poke name={pokemon.data.name} />
+          {/* <span>{pokemon.data.name}</span> */}
         </div>
       ))}
     </div>
