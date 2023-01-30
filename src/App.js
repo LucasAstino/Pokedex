@@ -60,7 +60,7 @@ export default function App() {
         }
       });
     };
-    types(tipo);
+    types(tipo)
   };
 
   {
