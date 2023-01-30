@@ -61,7 +61,7 @@ export default function App() {
       });
     };
     types(tipo)
-  };
+  }
 
   {
     console.log(color);
