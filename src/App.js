@@ -46,7 +46,6 @@ export default function App() {
 
   return (
     <div className="App">
-      {console.log(color)}
       {pokemonList.map((pokemon, key) => (
         <PokeCard
           name={pokemon.data.name}
