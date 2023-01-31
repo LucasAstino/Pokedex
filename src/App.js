@@ -4,7 +4,6 @@ import "./styles.css";
 import PokeCard from "./pokeCard.js";
 
 export default function App() {
-  const color = "";
   const [pokemonList, setpokemonList] = useState([]);
 
   useEffect(() => pokemons(), []);
@@ -20,52 +19,31 @@ export default function App() {
       .all(endpoints.map((endpoint) => axios.get(endpoint)))
       .then((res) => setpokemonList(res));
 
-    var tipo = "";
-
-    const types = (tp) => {
-      pokemonList.map((pokemon, key) => {
-        tp = pokemon.data.types[0].type.name;
-
-        console.log(tp);
-
-        switch (tp) {
-          case "fire":
-            color.push("red");
-            console.log(color);
-            break;
-          //       // case "grass":
-          //       //   tp = green;
-          //       //   break;
-          //       // case "water":
-          //       //   tp = blue;
-          //       //   break;
-          //       // case "bug":
-          //       //   tp = inceto;
-          //       //   break;
-          //       // case "normal":
-          //       //   tp = black;
-          //       //   break;
-          //       // case "poison":
-          //       //   tp = purple;
-          //       //   break;
-          //       // case "electric":
-          //       //   tp = roxo;
-          //       //   break;
-          //       // case "fairy":
-          //       //   tp = gay;
-          //       //   break;
-          //       // case "ground":
-          //       //   tp = lutador;
-          //       //   break;
-        }
-      });
-    };
-    types(tipo)
-  }
-
-  {
-    console.log(color);
-  }
+    //       // case "grass":
+    //       //   tp = green;
+    //       //   break;
+    //       // case "water":
+    //       //   tp = blue;
+    //       //   break;
+    //       // case "bug":
+    //       //   tp = inceto;
+    //       //   break;
+    //       // case "normal":
+    //       //   tp = black;
+    //       //   break;
+    //       // case "poison":
+    //       //   tp = purple;
+    //       //   break;
+    //       // case "electric":
+    //       //   tp = roxo;
+    //       //   break;
+    //       // case "fairy":
+    //       //   tp = gay;
+    //       //   break;
+    //       // case "ground":
+    //       //   tp = lutador;
+    //       //   break;
+  };
 
   return (
     <div className="App">
