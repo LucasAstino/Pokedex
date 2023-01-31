@@ -16,9 +16,7 @@ export default function pokeCard(props) {
     <div class="pokeCard">
       <img src={props.image} />
       <span> {props.name}</span>
-      <span> {props.type}</span>
-
-      <span class="colorType"> {props.color}</span>
+      <span class="colorType"> {props.type}</span>
     </div>
   );
 }

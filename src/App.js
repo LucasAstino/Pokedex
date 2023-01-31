@@ -13,7 +13,6 @@ export default function App() {
     for (let i = 1; i <= 50; i++) {
       endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
     }
-    // console.log(endpoints);
 
     var response = axios
       .all(endpoints.map((endpoint) => axios.get(endpoint)))
