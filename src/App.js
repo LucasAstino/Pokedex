@@ -2,6 +2,7 @@ import axios, { Axios } from "axios";
 import React, { useEffect, useState } from "react";
 import "./styles.css";
 import PokeCard from "./pokeCard.js";
+import Header from "./header.js";
 
 export default function App() {
   const [pokemonList, setpokemonList] = useState([]);
@@ -17,35 +18,11 @@ export default function App() {
     var response = axios
       .all(endpoints.map((endpoint) => axios.get(endpoint)))
       .then((res) => setpokemonList(res));
-
-    //       // case "grass":
-    //       //   tp = green;
-    //       //   break;
-    //       // case "water":
-    //       //   tp = blue;
-    //       //   break;
-    //       // case "bug":
-    //       //   tp = inceto;
-    //       //   break;
-    //       // case "normal":
-    //       //   tp = black;
-    //       //   break;
-    //       // case "poison":
-    //       //   tp = purple;
-    //       //   break;
-    //       // case "electric":
-    //       //   tp = roxo;
-    //       //   break;
-    //       // case "fairy":
-    //       //   tp = gay;
-    //       //   break;
-    //       // case "ground":
-    //       //   tp = lutador;
-    //       //   break;
   };
 
   return (
     <div className="App">
+      <Header />
       {pokemonList.map((pokemon, key) => (
         <PokeCard
           name={pokemon.data.name}

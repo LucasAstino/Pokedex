@@ -4,15 +4,31 @@
   display: flex;
   flex-wrap: wrap;
 }
-.pokeCard {
-  width: 100px;
-  height: 100px;
+#pokeCard {
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  height: 14em;
   background-color: rgb(225, 225, 225);
   margin: 30px;
-  border-radius: 20%;
+  border-radius: 10%;
   box-shadow: 0 0 5px;
+  justify-content: space-evenly;
 }
 
-.red {
-  color: red !important;
+.ball {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.type {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header {
+  background: black;
+  display: flex;
 }
