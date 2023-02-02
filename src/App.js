@@ -11,7 +11,7 @@ export default function App() {
 
   const pokemons = () => {
     var endpoints = [];
-    for (let i = 1; i <= 50; i++) {
+    for (let i = 1; i <= 200; i++) {
       endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
     }
 
@@ -20,9 +20,24 @@ export default function App() {
       .then((res) => setpokemonList(res));
   };
 
+  const pokeFilter = (texto) => {
+    var pokeFiltered = [];
+    if (texto == "") {
+      pokemons();
+    }
+    for (var i in pokemonList) {
+      if (pokemonList[i].data.name.includes(texto.toLowerCase())) {
+        console.log(pokeFiltered[i]);
+        pokeFiltered.push(pokemonList[i]);
+        console.log(pokeFiltered);
+        setpokemonList(pokeFiltered);
+      }
+    }
+  };
+
   return (
     <div className="App">
-      <Header />
+      <Header onchange={pokeFilter} />
       {pokemonList.map((pokemon, key) => (
         <PokeCard
           name={pokemon.data.name}
