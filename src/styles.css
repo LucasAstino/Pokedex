@@ -7,6 +7,11 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+body .dark {
+  background-color: black !important;
+}
+
 #pokeCard {
   display: flex;
   flex-direction: column;
@@ -31,28 +36,83 @@
   justify-content: space-evenly;
 }
 
-header {
+#header {
   width: 100%;
   height: 100px;
-  background-color: black;
+  background-color: gray;
   display: flex;
   padding: 10px 30px 10px 30px;
   justify-content: space-between;
   align-items: center;
 }
 
-header img {
+#header .dark {
+  background-color: blue !important;
+}
+
+#header img {
   width: 200px;
 }
 
 .input {
+  width: 30%;
   height: 30%;
   padding: 5px;
   border-radius: 5px;
-  background-color: gray;
-  color: white;
+  background-color: white;
 }
 
-::placeholder {
+/* ::placeholder {
   color: white;
+} */
+
+#toogle {
+  width: 5em;
+  height: 2em;
+  background-color: white;
+  border-radius: 160px;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+    inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 8px 60px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
+
+#toogle img {
+  width: 30%;
+}
+
+#button {
+  width: 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2em;
+  background-color: white;
+  border-radius: 50%;
+  transform: scale(0.9);
+  box-shadow: 0 0 10px black, inset 0 4px 4px gray, inset 0 -4px 4px gray;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#toogle.active #button {
+  right: 60%;
+  background-color: #222;
+}
+
+#toogle.active {
+  background-color: rgba(31, 30, 30, 0.822);
+}
+
+body.active {
+  background-color: white !important;
+  transition: 1s;
+}
+/* 
+body.active > #toogle {
+  background-color: #ffff !important;
+  transition: 1s;
+} */
